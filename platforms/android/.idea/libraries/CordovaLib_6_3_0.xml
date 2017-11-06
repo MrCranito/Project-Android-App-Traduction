@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="CordovaLib-6.3.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/build/intermediates/exploded-aar/org.apache.cordova/CordovaLib/6.3.0/debug/res" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/org.apache.cordova/CordovaLib/6.3.0/debug/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

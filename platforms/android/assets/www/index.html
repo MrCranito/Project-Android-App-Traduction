@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        
+
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <div class="pos-f-t">
+                     <div class="collapse" id="navbarToggleExternalContent"> 
+                               <div class="bg-dark p-4">
+                                       <h4 class="text-white">Collapsed content</h4>
+                                      <span class="text-muted">Toggleable via the navbar brand.</span>
+                               </div>
+                     </div>
+                     <nav class="navbar navbar-dark bg-dark">
+                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                             <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <p class="fontH1">BabelFish</p>
+                    </nav>
+                    </div>
+            <div id="deviceready" class="blink">
+                <p class="event listening"></p>
+                <p class="event received"></p>
+                <div class="alert alert-danger" id="error_internet" style="display: none">
+                        <strong>Error!</strong> Device's not connected.
+                </div>
+                <div class="alert alert-success" id="success_internet" style="display: none">
+                        <strong>Success!</strong> The device is connected.
+                </div>
+                
+                        
+                
+        <div class="form-group">
+                <label for="comment">Text a traduire:</label>
+                    <select class="custom-dropdown__select custom-dropdown__select--white" id="country_selected">
+                            <option value="ZH">Chinese (Mandarin)</option>
+                    <option value="CS">Czech</option>
+                    <option value="DA">Danish</option>
+                    <option value="NL">Dutch</option>
+                    <option value="EN" >English</option>
+                    <option value="ET">Estonian</option>
+                    <option value="FR" selected = "selected">French</option>
+                    <option value="KA">Georgian</option>
+                    <option value="DE">German</option>
+                    <option value="HI">Hindi</option>
+                    <option value="HU">Hungarian</option>
+                    <option value="LA">Latin</option>
+                    <option value="LV">Latvian</option>
+                    <option value="LT">Lithuanian</option>
+                    <option value="SR">Serbian</option>
+                    <option value="CY">Welsh</option>
+                    <option value="XH">Xhosa</option>
+                            </select>
+               
+                         <textarea class="form-control" rows="5" id="speechtotext"></textarea>
+                </div>
+        
+                <button id="button_translate" type="button" class="microphone_button"><img src="img/microphone.svg" class="microphone"></img></button>
+
+
+                
+                        
+                <div class="form-group">
+                     <label for="comment">Text traduit:</label>
+                         <select class="custom-dropdown__select custom-dropdown__select--white" name="speak_to_translate" id="country_selected_out">
+                            <option value="ZH">Chinese (Mandarin)</option>
+                            <option value="CS">Czech</option>
+                            <option value="DA">Danish</option>
+                            <option value="NL">Dutch</option>
+                            <option value="EN" selected = "selected">English</option>
+                            <option value="ET">Estonian</option>
+                            <option value="FR">French</option>
+                            <option value="KA">Georgian</option>
+                            <option value="DE">German</option>
+                            <option value="HI">Hindi</option>
+                            <option value="HU">Hungarian</option>
+                            <option value="LA">Latin</option>
+                            <option value="LV">Latvian</option>
+                            <option value="LT">Lithuanian</option>
+                            <option value="SR">Serbian</option>
+                            <option value="CY">Welsh</option>
+                            <option value="XH">Xhosa</option>
+                            </select>
+                                 <textarea class="form-control" rows="5" id="TxtTarget"></textarea>
+                </div>
+                
+                
+                <button id="texttospeech" type="button" class="speaker_button"><img src="img/loud-volume.svg" class="haut-parleur"></img></button>
+                <button id="translate" type="button" class="speaker_button"><img src="img/loud-volume.svg" class="haut-parleur"></img></button>
+            </div>
+
+            
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+    </body>
+</html>
