@@ -32,7 +32,11 @@ var app = {
         this.receivedEvent('deviceready');
         console.log($("select[name='speak_to_translate'] > option:selected").val());
         document.addEventListener("offline", onOffline, false);
-         document.addEventListener("online", onOnline, false);
+        document.addEventListener("online", onOnline, false);
+        var button_anim = document.getElementById("button_translate");
+
+        
+
 
         function onOffline() {
                     $('#error_internet').show();
@@ -65,29 +69,42 @@ var app = {
             
             }
             
+        
+        
 
 
             checkConnection();
             var Text = "test";    
             document.getElementById("button_translate").addEventListener("click", startRecognition);
-             
+            
+
+            var my_Locale_select = ''+$("#country_selected").val().toLowerCase()+'-'+$('#country_selected').val()+''; 
 
             function startRecognition(){
+                    $('#button_translate').addClass("anim");
                     window.plugins.speechRecognition.startListening(function(result){
+                       
+                        
                         // Show results in the console
                         var my_Locale_select = ''+$("#country_selected").val().toLowerCase()+'-'+$('#country_selected').val()+'';
                         $('#speechtotext').html(''+result[0]+'');
                         console.log(result);
 
+                        $('#button_translate').removeClass("anim");
+
                         Text = ""+result[0]+"";
+                        
 
                     }, function(err){
                         console.error(err);
                     }, {
                         language: my_Locale_select,
-                        showPopup: true
+                        showPopup: false
+                        
                     });
+                   
                 }
+                
 
                 // Verify if recognition is available
                 window.plugins.speechRecognition.isRecognitionAvailable(function(available){
@@ -116,7 +133,8 @@ var app = {
                 });
                 
                 var Texttranslated = "";
-                $("#translate").click(function () {
+              
+                $("#button_texttospeech").click(function () {
                             var url = "https://translation.googleapis.com/language/translate/v2?key=AIzaSyAkhxpUAEH4u9mVZtk7fTc4KnlQ0xG-feY";
                             url += "&source=" + $("#country_selected").val();
                             url += "&target=" + $("#country_selected_out").val();
@@ -130,7 +148,7 @@ var app = {
         });
                 
                  
-                $("#texttospeech").click(function() {
+                $("#button_texttospeech").click(function() {
                         var my_Locale = ''+$("#country_selected_out").val().toLowerCase()+'-'+$('#country_selected_out').val()+'';
                         TTS.speak({
                             text: Texttranslated,

@@ -21,6 +21,9 @@
     },
     "cordova-plugin-audioinput": {
       "PACKAGE_NAME": "com.ynov.B3.tp"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.ynov.B3.tp"
     }
   },
   "dependent_plugins": {}

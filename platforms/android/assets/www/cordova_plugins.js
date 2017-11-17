@@ -40,6 +40,14 @@ module.exports = [
     "clobbers": [
       "audioinput"
     ]
+  },
+  {
+    "id": "cordova-plugin-splashscreen.SplashScreen",
+    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+    "pluginId": "cordova-plugin-splashscreen",
+    "clobbers": [
+      "navigator.splashscreen"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -49,7 +57,8 @@ module.exports.metadata =
   "cordova-plugin-network-information": "1.3.3",
   "cordova-plugin-tts": "0.2.3",
   "cordova-plugin-speechrecognition": "1.1.2",
-  "cordova-plugin-audioinput": "0.3.0"
+  "cordova-plugin-audioinput": "0.3.0",
+  "cordova-plugin-splashscreen": "4.1.0"
 };
 // BOTTOM OF METADATA
 });
